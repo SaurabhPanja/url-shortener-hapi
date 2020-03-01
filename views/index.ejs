@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URl Shortner | Hapi js</title>
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+</head>
+
+<body>
+    <div class="ui container">
+
+        <h1 class="ui header">URL Shortner</h1>
+
+        <div class="ui divider"></div>
+
+        <form class="ui form" action="/" method="POST">
+            <div class="field">
+              <input type="text" name="full-url" placeholder="Enter URL here">
+            </div>
+            <button class="ui primary button" type="submit">Submit</button>
+          </form>
+
+        <table class="ui single line table">
+            <thead>
+                <tr>
+                    <th class="eight wide">Full Url</th>
+                    <th class="four wide">Short Url</th>
+                    <th class="four wide">Click(s)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for(let i = 0; i < allUrls.length; i++){%>
+                    <tr>
+                        <td>
+                            <a href="<%= allUrls[i].fullUrl%>" target="_blank"><%= allUrls[i].fullUrl%></a>
+                        </td>
+                        <td>
+                            <a href="<%= allUrls[i].shortUrl%>" target="_blank"><%= allUrls[i].shortUrl%></a>                        
+                        </td>
+                        <td><%= allUrls[i].count %> </td>
+                    </tr>
+                <%} %> 
+            </tbody>
+        </table>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+</body>
+
+</html>

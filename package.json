@@ -1,0 +1,31 @@
+{
+  "name": "url-shortner-hapi",
+  "version": "1.0.0",
+  "description": "A tutorial to get an overview hapi micro framework, by creating a url shortner.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SaurabhPanja/url-shortner-hapi.git"
+  },
+  "keywords": [
+    "hapi url shortner",
+    "url",
+    "shortner"
+  ],
+  "author": "Saurabh Panja",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SaurabhPanja/url-shortner-hapi/issues"
+  },
+  "homepage": "https://github.com/SaurabhPanja/url-shortner-hapi#readme",
+  "dependencies": {
+    "@hapi/hapi": "^19.1.1",
+    "@hapi/vision": "^6.0.0",
+    "ejs": "^3.0.1",
+    "mongoose": "^5.9.2",
+    "shortid": "^2.2.15"
+  }
+}
