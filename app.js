@@ -63,14 +63,14 @@ const start = async () => {
         method: 'GET',
         path: '/{shortUrl}',
         handler: async (request, h) => {
-            let params_url = request.params.shortUrl 
-
-            //exception
-            if(params_url === "favicon.ico"){
-                return h.redirect("/")  
-            }
+            let params_url = request.params.shortUrl
 
             const shortUrl = await ShortUrl.findOne({ shortUrl: params_url });
+
+            //short url is not found
+            if(!shortUrl){
+                return await h.redirect('/')
+            }
 
             shortUrl.count++;
             shortUrl.save()
