@@ -35,7 +35,11 @@
                 <% for(let i = 0; i < allUrls.length; i++){%>
                     <tr>
                         <td>
-                            <a href="<%= allUrls[i].fullUrl%>" target="_blank"><%= allUrls[i].fullUrl%></a>
+                            <% if(allUrls[i].fullUrl.length > 50){ %>
+                                <a href="<%= allUrls[i].fullUrl%>" target="_blank"><%= allUrls[i].fullUrl.slice(0,50)+"..."%></a>
+                            <% }else{ %>
+                                <a href="<%= allUrls[i].fullUrl%>" target="_blank"><%= allUrls[i].fullUrl%></a>
+                            <%} %> 
                         </td>
                         <td>
                             <a href="<%= allUrls[i].shortUrl%>" target="_blank"><%= allUrls[i].shortUrl%></a>                        
