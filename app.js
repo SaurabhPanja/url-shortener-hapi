@@ -1,6 +1,9 @@
 'use strict';
 
 const Hapi = require('@hapi/hapi');
+//env variable config
+const dotenv = require('dotenv');
+dotenv.config()
 
 //database connectivity
 
@@ -15,7 +18,7 @@ const ShortUrl = require('./models/shortUrl')
 const start = async () => {
 
     const server = Hapi.server({
-        port: 8000,
+        port: process.env.PORT,
         host: 'localhost'
     });
 
@@ -34,7 +37,6 @@ const start = async () => {
         path: '/',
         handler: async (request, h) => {
             let allUrls = await ShortUrl.find()
-
             return await h.view('index', { allUrls: allUrls })
         }
     });
