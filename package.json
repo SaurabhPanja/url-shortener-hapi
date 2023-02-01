@@ -27,7 +27,7 @@
     "@hapi/vision": "^6.0.0",
     "dotenv": "^8.2.0",
     "ejs": "^3.0.1",
-    "mongoose": "^5.9.2",
+    "mongoose": "^5.13.15",
     "shortid": "^2.2.15"
   }
 }
